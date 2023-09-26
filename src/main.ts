@@ -41,7 +41,6 @@ async function bootstrap() {
 
   const http = require("http");
   setInterval(function() {
-    // http.get("http://luku-be.herokuapp.com/");
     http.get(process.env.ENVIRONMENT_BE_URL);
     console.log("DON'T YOU HUSH LITTLE BABY",http.get(process.env.ENVIRONMENT_BE_URL))
   }, 300000);
