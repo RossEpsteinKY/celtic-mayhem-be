@@ -46,7 +46,7 @@ async function bootstrap() {
   }, 300000);
 
   await app.listen(process.env.PORT || 80, '0.0.0.0', () => {
-    console.log("Server is running.");
+    console.log("Server is running");
   });
 
 }
