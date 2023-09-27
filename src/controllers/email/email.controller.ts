@@ -14,7 +14,7 @@ import {
 
 import { ApiTags } from '@nestjs/swagger';
 import { EmailService } from '../../services/email/email.service';
-
+import {EmailDto} from "../../dtos/email.dto";
 
 
 @ApiTags('Email')
@@ -24,13 +24,27 @@ export class EmailController {
 
 
 	@Post('/sendEmail')
-	async sendEmail() {
+	async sendEmail(
+		@Body()
+			bodyData: EmailDto
+	) {
 		try {
-			console.log('hits');
-			const email = await this.emailService.sendEmail();
-			return email;
+			// return('***HITS GALLERY FIND BY ID ENDPOINT****');
+					console.log('hits');
+					const emailToSend = await this.emailService.sendEmail(bodyData);
+					return emailToSend;
 		} catch (e) {
 			throw new HttpException(e.message || 'Server Error', e.status || 500);
 		}
 	}
+	// @Post('/sendEmail')
+	// async sendEmail(bodyData) {
+	// 	try {
+	// 		console.log('hits');
+	// 		const emailToSend = await this.emailService.sendEmail(bodyData);
+	// 		return emailToSend;
+	// 	} catch (e) {
+	// 		throw new HttpException(e.message || 'Server Error', e.status || 500);
+	// 	}
+	// }
 }

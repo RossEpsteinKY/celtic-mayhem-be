@@ -18,10 +18,10 @@ export class EmailService {
 	) {}
 	
 
-	async sendEmail() {
+	async sendEmail(bodyData) {
 
-		console.log('hits endpoint')
-		return "okay";
+		console.log('hits endpoint with: ' + bodyData.name, bodyData.email, bodyData.emailBody)
+		return;
 
 
 		}
