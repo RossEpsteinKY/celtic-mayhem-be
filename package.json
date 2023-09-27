@@ -23,7 +23,7 @@
     "migration:run": "npm typeorm migration:run",
     "migration:up": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm migration:run -d src/modules/config/ormconfig.ts",
     "migration:down": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm migration:revert -d src/modules/config/ormconfig.ts",
-    "start:prod": "STAGE=prod NODE_ENV=production node ./dist/src/main.js"
+    "start:prod": "STAGE=prod NODE_ENV=production node ./dist/main.js"
   },
   "dependencies": {
     "@nestjs/common": "^9.0.0",
