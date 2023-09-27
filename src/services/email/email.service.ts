@@ -20,9 +20,6 @@ export class EmailService {
 
 	async sendEmail(bodyData) {
 		const Mailjet = require('node-mailjet');
-
-		// console.log('hits endpoint with: ' + bodyData.name, bodyData.email, bodyData.emailBody)
-
 		const mailjet = new Mailjet({
 			apiKey: process.env.MJ_APIKEY_PUBLIC,
 			apiSecret: process.env.MJ_APIKEY_PRIVATE
@@ -56,7 +53,8 @@ export class EmailService {
 
 		request
 			.then((result) => {
-				console.log(result.body);
+				console.log("result is: ", result);
+				//if returns 200 and a status of okay, then it was successful
 				return result;
 			})
 			.catch((err) => {

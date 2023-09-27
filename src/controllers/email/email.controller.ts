@@ -30,8 +30,6 @@ export class EmailController {
 			bodyData: EmailDto
 	) {
 		try {
-			// return('***HITS GALLERY FIND BY ID ENDPOINT****');
-					console.log('hits');
 					const emailToSend = await this.emailService.sendEmail(bodyData);
 					return emailToSend;
 		} catch (e) {
