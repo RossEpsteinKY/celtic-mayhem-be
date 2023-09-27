@@ -17,6 +17,7 @@ import { EmailService } from '../../services/email/email.service';
 import {EmailDto} from "../../dtos/email.dto";
 
 
+
 @ApiTags('Email')
 @Controller('email')
 export class EmailController {
