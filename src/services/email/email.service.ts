@@ -55,6 +55,9 @@ export class EmailService {
 			.then((result) => {
 				console.log("result is: ", result);
 				//if returns 200 and a status of okay, then it was successful
+				// 		//if returns 200 and a status of okay, then it was successful
+				// 		// /  status: 200,
+				// 		// statusText: 'OK',
 				return result;
 			})
 			.catch((err) => {
