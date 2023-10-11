@@ -3,6 +3,8 @@
 // const request = require('request');
 // const AWS = require('aws-sdk');
 // const s3 = new AWS.S3();
+import {log} from "util";
+
 require('dotenv').config();
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -17,7 +19,15 @@ export class PaymentService {
 
 	) {}
 	async sendPayment(bodyData) {
-		console.log('hits with: ', bodyData);
+
+		console.log('what is body',bodyData.orderData)
+
+		let orderData = bodyData.orderData;
+		await orderData.cartItems.forEach((evt) => {
+
+
+
+		});
 	}
 
 	// async sendEmail(bodyData) {
