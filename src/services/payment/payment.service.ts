@@ -1,0 +1,74 @@
+
+
+// const request = require('request');
+// const AWS = require('aws-sdk');
+// const s3 = new AWS.S3();
+require('dotenv').config();
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import {IsNull, Not, Repository} from 'typeorm';
+import fetch from "node-fetch" ;
+
+
+@Injectable()
+export class PaymentService {
+	
+	constructor(
+
+	) {}
+	async sendPayment(bodyData) {
+		console.log('hits with: ', bodyData);
+	}
+
+	// async sendEmail(bodyData) {
+	// 	const Mailjet = require('node-mailjet');
+	// 	const mailjet = new Mailjet({
+	// 		apiKey: process.env.MJ_APIKEY_PUBLIC,
+	// 		apiSecret: process.env.MJ_APIKEY_PRIVATE
+	// 	});
+	//
+	// 	const request = mailjet
+	// 		.post('send', { version: 'v3.1' })
+	// 		.request({
+	// 			Messages: [
+	// 				{
+	// 					From: {
+	// 						Email: "rossepsteinforge@gmail.com",
+	// 						Name: "Ross Epstein"
+	// 					},
+	// 					To: [
+	// 						{
+	// 							Email: "rossepsteinforge@gmail.com",
+	// 							Name: "Ross Epstein"
+	// 						}
+	// 					],
+	// 					Subject: "Celtic Mayhem Contact Form from sender " + bodyData.name,
+	// 					TextPart: `You received a message from ${bodyData.name} with the email address ${bodyData.email}.
+	//
+	//
+	// 					The message says: ${bodyData.emailBody}`,
+	// 					HTMLPart: `<h4>You received a message from ${bodyData.name} with the email address ${bodyData.email}.
+	// 					The message says: <br /> <br /> ${bodyData.emailBody}</h4>`
+	// 				}
+	// 			]
+	// 		})
+	//
+	// 	request
+	// 		.then((result) => {
+	// 			console.log("result is: ", result);
+	// 			//if returns 200 and a status of okay, then it was successful
+	// 			// 		//if returns 200 and a status of okay, then it was successful
+	// 			// 		// /  status: 200,
+	// 			// 		// statusText: 'OK',
+	// 			return result;
+	// 		})
+	// 		.catch((err) => {
+	// 			console.log(err.statusCode)
+	// 	})
+	//
+	//
+	//
+	// 	}
+
+
+}

@@ -6,6 +6,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import {TypeOrmModule} from "@nestjs/typeorm";
 import {EmailController} from "./controllers/email/email.controller";
+import {PaymentService} from "./services/payment/payment.service";
+import {PaymentController} from "./controllers/payment/payment.controller";
 
 
 
@@ -13,11 +15,13 @@ import {EmailController} from "./controllers/email/email.controller";
 @Module({
   controllers: [
     AppController,
-    EmailController
+    EmailController,
+    PaymentController
   ],
   providers: [
     AppService,
-    EmailService
+    EmailService,
+    PaymentService
 
   ],
   exports: [],
